@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "slither.io Bot Control",
+  "version": "1.0",
+  "description": "Auto-detect your slither.io server and control bots with one click.",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "slither.io Bot Control"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://slither.io/*", "*://slither.com/*"],
+      "run_at": "document_start",
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "http://doubleaaguy.duckdns.org:8081/*"
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
